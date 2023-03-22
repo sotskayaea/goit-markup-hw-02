@@ -219,3 +219,237 @@
     color: var(--text-color);
    }
 /* End Portfolio */
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(46, 47, 66, 0.4);
+
+transition: opacity var(--trns-fast), visibility var(--trns-fast);
+}
+
+.backdrop.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 408px;
+    min-height: 576px;
+    padding: 72px 24px 24px 24px;
+
+    background-color: var(--color-white);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+
+    transition: transform 150ms ease, opacity 150ms ease;
+    transition-delay: 400ms;
+}
+
+.backdrop.is-hidden .modal {
+    transform: translate(-50%, -70%);
+    opacity: 0;
+    transition-delay: 0s;
+}
+
+.modal-btn {
+    position: absolute;
+
+    top: 24px;
+    right: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    background-color: var(--color-cornflower);
+
+    transition: background-color var(--trns-fast);
+}
+
+.modal-btn:hover,
+.modal-btn:focus {
+    background-color: var(--color-ocean);
+}
+
+.modal-icon {
+    transition: fill var(--trns-fast);
+}
+
+.modal-btn:hover .modal-icon,
+.modal-btn:focus .modal-icon {
+    fill: var(--color-white);
+}
+
+.modal-title {
+    display: block;
+    margin-bottom: 34px;
+    text-align: center;
+
+    font-weight: 500;
+    color: var(--color-navy-blue);
+}
+
+/* Modal form styles */
+
+.modal-form-label {
+    display: block;
+
+    font-size: 12px;
+    line-height: calc(14 / 12);
+    letter-spacing: 0.04em;
+
+    margin-top: 8px;
+    margin-bottom: 4px;
+}
+
+.modal-form-group {
+    position: relative;
+    margin-bottom: 8px;
+}
+
+.modal-form-field {
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding-left: 36px;
+    padding-right: 36px;
+
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    outline: 2px solid transparent;
+    outline-offset: -1px;
+    transition: outline-color var(--trns-fast);
+}
+
+.modal-form-field:focus,
+.modal-form-field:focus-visible {
+    outline-color: var(--color-iris) ;
+}
+
+.modal-form-icon {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+    pointer-events: none;
+
+    transition: fill var(--trns-fast);
+}
+
+.modal-form-field:focus + .modal-form-icon {
+    fill: var(--color-iris);
+
+}
+
+.modal-form-comment {
+    display: block;
+    width: 100%;
+    height: 120px;
+    padding: 8px 16px;
+    margin-bottom: 16px;
+    resize: none;
+
+    font-size: 12px;
+
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    outline: 2px solid transparent;
+    outline-offset: -1px;
+    transition: outline-color var(--trns-fast);
+}
+
+.modal-form-comment:focus,
+.modal-form-comment:focus-visible {
+    outline-color: var(--color-iris);
+}
+
+.modal-form-comment::placeholder {
+color: rgba(117, 117, 117, 0.5);
+}
+
+.modal-form-agreement {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: calc( 14 / 12 );
+    letter-spacing: 0.04em;
+    color: #757575;
+    margin-bottom: 16px;
+
+    user-select: none;
+}
+
+.modal-agreement-group {
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 8px;
+}
+
+.modal-form-checkbox {
+    appearance: none;
+    display: block;
+    width: 18px;
+    height: 18px;
+
+    border: 2px solid var(--color-navy-blue);
+    border-radius: 3px;
+    transition-property: background-color, border-color, background-size ;
+    transition-duration: 400ms;
+    transition-timing-function: var(--trns-fast);
+    transition-delay: 0, 0, 200ms;
+    transform: translateY(-50%);
+
+    
+}
+
+.modal-form-checkbox:checked {
+    background-color: var(--color-ocean);
+    border-color: var(--color-ocean);
+    background-size: 14px;
+}
+
+.modal-icon-check {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    
+    fill: var(--color-white);
+}
+
+.modal-form-desc {
+    font-size: 13px;
+    user-select: none;
+    margin-bottom: 24px;
+
+}
+
+.modal-form-link {
+    color: var(--color-iris);
+}
+
+.modal-form-btn {
+    display: block;
+    
+    width: 169px;
+    height: 56px;
+    margin-right: auto;
+    margin-left: auto;
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+}
